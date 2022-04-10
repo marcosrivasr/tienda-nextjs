@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #efefef;
 }
 
 a {
@@ -13,4 +14,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h2 {
+  font-size: 62px;
+  margin: 20px 0 0 0;
+}
+
+.btn-cart {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background-color: greenyellow;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
 }

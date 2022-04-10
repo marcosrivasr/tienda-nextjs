@@ -1,0 +1,33 @@
+import Layout from "../../components/layout";
+import Product from "../../components/product";
+import ShoppingCart from "../../components/shoppingCart";
+import { getItemData, getPathsFromTitle } from "../../lib/items";
+
+export default function ProductPage({ productInfo }) {
+  return (
+    <Layout>
+      <Product item={productInfo.data} showAs="Page" />
+      <ShoppingCart />
+    </Layout>
+  );
+}
+
+export async function getStaticPaths() {
+  const paths = getPathsFromTitle();
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const id = params.id;
+  const productInfo = getItemData(id);
+
+  return {
+    props: {
+      productInfo,
+    },
+  };
+}
