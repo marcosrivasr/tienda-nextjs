@@ -5,7 +5,7 @@ import { getItemData, getPathsFromTitle } from "../../lib/items";
 
 export default function ProductPage({ productInfo }) {
   return (
-    <Layout>
+    <Layout title={productInfo.data.title}>
       <Product item={productInfo.data} showAs="Page" />
       <ShoppingCart />
     </Layout>

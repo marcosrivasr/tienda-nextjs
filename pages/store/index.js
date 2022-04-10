@@ -14,7 +14,6 @@ export default function Index({ items }) {
             <Product key={item.id} item={item} showAs="item" />
           ))}
       </div>
-      <ShoppingCart />
     </Layout>
   );
 }
