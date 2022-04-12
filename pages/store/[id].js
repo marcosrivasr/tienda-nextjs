@@ -13,7 +13,7 @@ export default function ProductPage({ productInfo }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getPathsFromTitle();
+  const paths = await getPathsFromTitle();
 
   return {
     paths,
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const id = params.id;
-  const productInfo = getItemData(id);
+  const productInfo = await getItemData(id);
 
   return {
     props: {

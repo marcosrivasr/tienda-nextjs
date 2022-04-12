@@ -37,7 +37,7 @@ export default function Home({ items }) {
 }
 
 export async function getStaticProps() {
-  const res = getLatestItems();
+  const res = await getLatestItems();
 
   return {
     props: {
