@@ -11,7 +11,7 @@ export default function FAQ() {
           <h3>Do you ship internationally?</h3>
           <p>
             Yes, we ship internationally. Make sure to enter your entire
-            international address in English characters. Don't forget the Postal
+            international address in English characters. Don&apost forget the Postal
             Code!
           </p>
           <h3>How much does shipping cost?</h3>
@@ -21,12 +21,12 @@ export default function FAQ() {
           </p>
           <h3>Can I exchange an item for a different size?</h3>
           <p>
-            Yes. We want happy customers. If your gear doesn't fit as expected,
-            we'll be happy to exchange it for a different size. Contact us and
-            we'll help you get squared away.
+            Yes. We want happy customers. If your gear doesn&apost fit as expected,
+            we&aposll be happy to exchange it for a different size. Contact us and
+            we&aposll help you get squared away.
           </p>
           <h3>
-            Where is my package? The tracking information hasn't updated in a
+            Where is my package? The tracking information hasn&apost updated in a
             long time. Can you tell me where it is?
           </h3>
 
@@ -44,7 +44,7 @@ export default function FAQ() {
             orders take much longer for shipping and processing. In some cases
             international orders can take up to 8 weeks from departure of the US
             to be delivered. If the tracking information was last in the US and
-            hasn't updated recently, it is more than likely still making its way
+            hasn&apost updated recently, it is more than likely still making its way
             there. Once it arrives at that next destination, the package will be
             scanned and the tracking information will update. If it has been
             over 8 weeks since it has been updated, let us know and we can try
