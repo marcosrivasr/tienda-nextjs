@@ -13,15 +13,15 @@ export default function Menu() {
   return (
     <nav className={style.menu}>
       <div>
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className={style.link}>Home</a>
         </Link>
 
-        <Link href="/store">
+        <Link href="/store" legacyBehavior>
           <a className={style.link}>Store</a>
         </Link>
 
-        <Link href="/faq">
+        <Link href="/faq" legacyBehavior>
           <a className={style.link}>FAQ</a>
         </Link>
       </div>

@@ -56,7 +56,7 @@ export default function Product({ item, qty = 0, showAs }) {
   return (
     <div className={style.item}>
       <div>
-        <Link href={`/store/${convertToPath(item.title)}`}>
+        <Link href={`/store/${convertToPath(item.title)}`} legacyBehavior>
           <a>
             <Image
               src={item.image}
@@ -69,7 +69,7 @@ export default function Product({ item, qty = 0, showAs }) {
       </div>
       <div>
         <h3>
-          <Link href={`/store/${convertToPath(item.title)}`}>
+          <Link href={`/store/${convertToPath(item.title)}`} legacyBehavior>
             <a>{item.title}</a>
           </Link>
         </h3>
