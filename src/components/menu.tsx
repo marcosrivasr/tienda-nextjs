@@ -10,43 +10,37 @@ export default function Menu() {
     cart.openCart();
   }
   return (
-    <>
-      <nav className={style.menu}>
-        <div>
-          <Link href="/" legacyBehavior>
-            <a className={style.link}>Home</a>
+    <div className="my-[40px] mx-auto flex h-[100px] w-[90%] justify-center ">
+      <nav className="fixed flex h-[100px] w-[90%] gap-[40px] z-[1]">
+        <div className="flex w-[100%] items-center justify-center gap-4 rounded-[20px] shadow-nav-shadow bg-white">
+          <Link
+            className="rounded-[10px] p-[20px] hover:bg-orange-400"
+            href="/"
+          >
+            Home
           </Link>
 
-          <Link href="/store" legacyBehavior>
-            <a className={style.link}>Store</a>
+          <Link
+            className="rounded-[10px] p-[20px] hover:bg-orange-400"
+            href="/store"
+          >
+            Store
           </Link>
 
-          <Link href="/faq" legacyBehavior>
-            <a className={style.link}>FAQ</a>
+          <Link
+            className="rounded-[10px] p-[20px] hover:bg-orange-400"
+            href="/faq"
+          >
+            FAQ
           </Link>
         </div>
 
-        <div></div>
-        <Link href="#" className={style.link} onClick={handleClickCart}>
-          Carrito ({cart.getNumberOfItems()})
-        </Link>
-      </nav>
-
-      {/* Made in tailwind */}
-      <nav className="flex justify-center gap-4">
-        <div className="border-[2px] border-black w-[80ch] shadow-nav-shadow">
-          <Link href="/">Home</Link>
-
-          <Link href="/store">Store</Link>
-
-          <Link href="/faq">FAQ</Link>
+        <div className="flex items-center w-[100px] bg-white rounded-[20px] shadow-nav-shadow justify-center">
+          <Link href="#" onClick={handleClickCart}>
+            Carrito ({cart.getNumberOfItems()})
+          </Link>
         </div>
-
-        <div></div>
-        <Link href="#" onClick={handleClickCart}>
-          Carrito ({cart.getNumberOfItems()})
-        </Link>
       </nav>
-    </>
+    </div>
   );
 }
