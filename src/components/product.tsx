@@ -5,7 +5,7 @@ import { useAppContext } from "@/components/stateWrapper";
 import ButtonCart from "@/components/buttonCart";
 import style from "../../styles/product.module.css";
 
-export default function Product({ item, qty = 0, showAs }) {
+export default function Product({ item, qty = 0, showAs } : any) {
   if (showAs === "Page") {
     return (
       <div className={style.page}>

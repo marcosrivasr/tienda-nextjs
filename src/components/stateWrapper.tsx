@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactElement,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const AppContext = createContext({
   isOpen: true,
@@ -36,7 +42,11 @@ isOpen: false,
   items: [],
 */
 
-export default function StateWrapper({ children }) {
+export default function StateWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [items, setItems] = useState([]);
 
