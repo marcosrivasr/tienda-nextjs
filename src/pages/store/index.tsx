@@ -1,13 +1,13 @@
-import Layout from "../../src/components/layout";
-import Product from "../../src/components/product";
-import { getItems } from "../../src/services/storeService";
-import ShoppingCart from "../../src/components/shoppingCart";
+import Layout from "@/components/layout";
+import Product from "@/components/product";
+import { getItems } from "@/services/storeService";
+import ShoppingCart from "@/components/shoppingCart";
 
 import styleProduct from "../../styles/product.module.css";
 
 export default function Index({ items }) {
   return (
-    <Layout>
+    <Layout title="Store">
       <div className={styleProduct.items}>
         {items &&
           items.map((item) => (

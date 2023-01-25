@@ -1,16 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import Layout from "../components/layout";
-import ShoppingCart from "../components/shoppingCart";
-import Product from "../components/product";
+import Layout from "@/components/layout";
+import ShoppingCart from "@/components/shoppingCart";
+import Product from "@/components/product";
+import { getLatestItems } from "@/services/storeService";
 import style from "../../styles/Home.module.css";
-import { getLatestItems } from "../services/storeService";
 import styleProduct from "../../styles/product.module.css";
 
 export default function Home({ items }) {
   return (
     <div>
-      <Layout>
+      <Layout title="Home">
         <div className={style.banner}>
           <div className={style.bannerBackground}>
             <div className={style.bannerInfo}>

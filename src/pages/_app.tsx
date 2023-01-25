@@ -1,6 +1,6 @@
 import { useState } from "react";
-import StateWrapper from "../components/stateWrapper";
-import ShoppingCart from "../components/shoppingCart";
+import StateWrapper from "@/components/stateWrapper";
+import ShoppingCart from "@/components/shoppingCart";
 import "../../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {

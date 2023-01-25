@@ -1,7 +1,7 @@
-import Layout from "../../src/components/layout";
-import Product from "../../src/components/product";
-import ShoppingCart from "../../src/components/shoppingCart";
-import { getItemData, getPathsFromTitle } from "../../src/lib/items";
+import Layout from "@/components/layout";
+import Product from "@/components/product";
+import ShoppingCart from "@/components/shoppingCart";
+import { getItemData, getPathsFromTitle } from "@/lib/items";
 
 export default function ProductPage({ productInfo }) {
   return (

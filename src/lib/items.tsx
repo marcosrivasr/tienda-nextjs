@@ -1,4 +1,4 @@
-import { getItems } from "../services/storeService";
+import { getItems } from "@/services/storeService";
 
 export async function getPathsFromTitle() {
   const items = await getItems();

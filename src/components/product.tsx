@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { convertToPath } from "../lib/items";
-import style from "../../styles/product.module.css";
-import { useAppContext } from "./stateWrapper";
 import Image from "next/image";
-import ButtonCart from "./buttonCart";
+import { convertToPath } from "@/lib/items";
+import { useAppContext } from "@/components/stateWrapper";
+import ButtonCart from "@/components/buttonCart";
+import style from "../../styles/product.module.css";
 
 export default function Product({ item, qty = 0, showAs }) {
   if (showAs === "Page") {
