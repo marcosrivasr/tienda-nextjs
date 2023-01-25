@@ -7,7 +7,7 @@ import { getLatestItems } from "@/services/storeService";
 import style from "../../styles/Home.module.css";
 import styleProduct from "../../styles/product.module.css";
 
-export default function Home({ items }) {
+export default function Home({ items } : any) {
   return (
     <div>
       <Layout title="Home">
@@ -27,7 +27,7 @@ export default function Home({ items }) {
         <h3>Latest Products</h3>
         <div className={styleProduct.items}>
           {items &&
-            items.map((item) => (
+            items.map((item: any) => (
               <Product key={item.id} item={item} showAs="item" />
             ))}
         </div>

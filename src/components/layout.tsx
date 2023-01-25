@@ -1,9 +1,14 @@
 import Head from "next/head";
 import Menu from "@/components/menu";
 import ShoppingCart from "@/components/shoppingCart";
-import style from "../../styles/layout.module.css";
 
-export default function Layout({ children, title }) {
+export default function Layout({
+  children,
+  title,
+}: {
+  children: React.ReactNode;
+  title: string;
+}) {
   return (
     <div>
       <Head>
@@ -13,8 +18,7 @@ export default function Layout({ children, title }) {
       </Head>
 
       <Menu />
-
-      <div className={style.container}>{children}</div>
+      <div className="w-full my-[40px] mx-auto flex flex-col items-center">{children}</div>
       <ShoppingCart />
     </div>
   );
