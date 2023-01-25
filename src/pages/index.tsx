@@ -3,9 +3,9 @@ import Image from "next/image";
 import Layout from "../components/layout";
 import ShoppingCart from "../components/shoppingCart";
 import Product from "../components/product";
-import style from "../styles/Home.module.css";
+import style from "../../styles/Home.module.css";
 import { getLatestItems } from "../services/storeService";
-import styleProduct from "../styles/product.module.css";
+import styleProduct from "../../styles/product.module.css";
 
 export default function Home({ items }) {
   return (

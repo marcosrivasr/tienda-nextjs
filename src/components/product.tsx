@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { convertToPath } from "../lib/items";
-import style from "../styles/product.module.css";
+import style from "../../styles/product.module.css";
 import { useAppContext } from "./stateWrapper";
 import Image from "next/image";
 import ButtonCart from "./buttonCart";

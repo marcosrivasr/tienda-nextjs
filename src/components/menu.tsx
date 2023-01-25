@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-import style from "../styles/menu.module.css";
+import style from "../../styles/menu.module.css";
 import { useAppContext } from "./stateWrapper";
 
 export default function Menu() {
