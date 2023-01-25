@@ -31,3 +31,7 @@ h2 {
   cursor: pointer;
   text-align: center;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

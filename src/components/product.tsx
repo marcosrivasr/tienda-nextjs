@@ -61,8 +61,8 @@ export default function Product({ item, qty = 0, showAs }) {
             <Image
               src={item.image}
               alt="Picture of the author"
-              width={500}
-              height={500}
+              width={350}
+              height={350}
             />
           </a>
         </Link>

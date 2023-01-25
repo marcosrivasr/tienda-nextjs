@@ -3,7 +3,7 @@ import Product from "@/components/product";
 import { getItems } from "@/services/storeService";
 import ShoppingCart from "@/components/shoppingCart";
 
-import styleProduct from "../../styles/product.module.css";
+import styleProduct from "../../../styles/product.module.css";
 
 export default function Index({ items }) {
   return (
