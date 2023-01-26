@@ -18,7 +18,7 @@ export default function ShoppingCart() {
 
   return (
     <div
-      className={style.shoppingCart}
+      className={`${style.shoppingCart} z-[2]`}
       style={{ display: cart.isOpen ? "block" : "none" }}
     >
       <button onClick={handleClickClose} className={style.close}>

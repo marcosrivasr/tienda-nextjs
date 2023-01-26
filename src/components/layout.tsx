@@ -18,7 +18,7 @@ export default function Layout({
       </Head>
 
       <Menu />
-      <div className="w-full my-[40px] mx-auto flex flex-col items-center">{children}</div>
+      <div className="w-full mx-auto flex flex-col items-center">{children}</div>
       <ShoppingCart />
     </div>
   );
