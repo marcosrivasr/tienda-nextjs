@@ -66,5 +66,13 @@ export default function handler(req, res) {
       description:
         "While there’s nothing like an original black GitHub hoodie, these new pullover hoodies are an instant classic. Featuring tone-on-tone embroidered Invertocats on the chest and wrist, these understated hoodies will have you looking so fresh and so clean (and so warm!).",
     },
+    {
+      id: 8,
+      title: "Mona Figurine",
+      price: 35,
+      image: "https://cdn.shopify.com/s/files/1/0051/4802/products/IMG_9086copy_882x882.jpg?v=1673280372",
+      description:
+        "Bring Mona to life - or at least to your desk! This full color figurine is for the fans and coders alike",
+    },
   ]);
 }
