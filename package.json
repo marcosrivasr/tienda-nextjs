@@ -1,7 +1,9 @@
 {
-  "name": "my-app",
+  "name": "next-store",
   "version": "0.1.0",
   "private": true,
+  "author": "Orangel Jose Gonzalez",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "13.1.6",
     "next": "13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"

@@ -3,12 +3,10 @@ import Product from "@/components/product";
 import { getItems } from "@/services/storeService";
 import ShoppingCart from "@/components/shoppingCart";
 
-import styleProduct from "../../../styles/product.module.css";
-
 export default function Index({ items }) {
   return (
     <Layout title="Store">
-      <div className={styleProduct.items}>
+      <div>
         {items &&
           items.map((item) => (
             <Product key={item.id} item={item} showAs="item" />

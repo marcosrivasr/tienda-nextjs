@@ -1,6 +1,5 @@
 import Product from "@/components/product";
 import { useAppContext } from "@/components/stateWrapper";
-import style from "../../styles/shoppingCart.module.css";
 
 export default function ShoppingCart() {
   const cart = useAppContext();
@@ -18,19 +17,18 @@ export default function ShoppingCart() {
 
   return (
     <div
-      className={`${style.shoppingCart} z-[2]`}
       style={{ display: cart.isOpen ? "block" : "none" }}
     >
-      <button onClick={handleClickClose} className={style.close}>
+      <button onClick={handleClickClose}>
         Close
       </button>
 
       {cart.items.length === 0 ? (
-        <div className={style.empty}>Cart is empty</div>
+        <div>Cart is empty</div>
       ) : (
         <>
           <h3>Your items</h3>
-          <div className={style.items}>
+          <div>
             {cart.items &&
               cart.items.length > 0 &&
               cart.items.map((item, i) => (
@@ -42,7 +40,7 @@ export default function ShoppingCart() {
                 />
               ))}
           </div>
-          <div className={style.total}>Total: ${getTotal()}</div>
+          <div>Total: ${getTotal()}</div>
         </>
       )}
     </div>

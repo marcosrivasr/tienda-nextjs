@@ -1,9 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useAppContext } from "@/components/stateWrapper";
-import style from "../../styles/menu.module.css";
+import Router from "next/router";
 
-export default function Menu() {
+interface Link {
+  label: string;
+  route: string;
+}
+
+const links: Link[] = [
+  {
+    label: "Home",
+    route: "/",
+  },
+  {
+    label: "Store",
+    route: "/store",
+  },
+  {
+    label: "FAQ",
+    route: "/faq",
+  },
+];
+
+export default function Navbar() {
   const cart = useAppContext();
 
   function handleClickCart(e) {
@@ -11,36 +31,28 @@ export default function Menu() {
     cart.openCart();
   }
   return (
-    <div className="my-[40px] mx-auto flex h-[100px] w-[90%] justify-center ">
+    <div className="my-[30px] mx-auto flex h-[100px] w-[90%] justify-center ">
       <nav className="fixed z-[1] flex h-[80px] w-[90%] gap-[20px]">
-        <div className="flex w-[100%] items-center justify-center gap-4 rounded-[20px] bg-white shadow-nav-shadow">
-          <Link
-            className="rounded-[10px] p-[20px] hover:bg-[#E24648]"
-            href="/"
-          >
-            Home
-          </Link>
-
-          <Link
-            className="rounded-[10px] p-[20px] hover:bg-[#E24648]"
-            href="/store"
-          >
-            Store
-          </Link>
-
-          <Link
-            className="rounded-[10px] p-[20px] hover:bg-[#E24648]"
-            href="/faq"
-          >
-            FAQ
-          </Link>
-        </div>
+        <ul className="flex w-[100%] items-center justify-center gap-4 rounded-[20px] bg-white shadow-nav-shadow text-[1.8rem]">
+          {links.map((link) => (
+            <li
+              className="rounded-[10px] p-[10px] hover:bg-[#E24648]"
+              key={link.route}
+            >
+              <Link className="p-[10px]" href={link.route}>
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
         <div className="flex w-[80px] items-center justify-center rounded-[20px] border-[2px] border-[#E24648] bg-white shadow-nav-shadow">
           <Link href="#" onClick={handleClickCart}>
             <div className="flex h-[80px] w-[80px] items-center justify-center">
               <div className="absolute right-[-5px] top-[-5px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#E24648]">
-                <span className="text-[14px] text-white">{cart.getNumberOfItems()}</span>
+                <span className="text-[1.4rem] text-white">
+                  {cart.getNumberOfItems()}
+                </span>
               </div>
               <Image
                 height={40}
