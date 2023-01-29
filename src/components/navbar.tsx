@@ -31,8 +31,8 @@ export default function Navbar() {
     cart.openCart();
   }
   return (
-    <div className="my-[30px] mx-auto flex h-[100px] w-[90%] justify-center ">
-      <nav className="fixed z-[1] flex h-[80px] w-[90%] gap-[20px]">
+    <div className="mt-[30px] mb-[30px] mx-auto flex h-[80px] w-[90%] justify-center ">
+      <nav className="fixed z-[1] flex w-[90%] gap-[20px]">
         <ul className="flex w-[100%] items-center justify-center gap-4 rounded-[20px] bg-white shadow-nav-shadow text-[1.8rem]">
           {links.map((link) => (
             <li

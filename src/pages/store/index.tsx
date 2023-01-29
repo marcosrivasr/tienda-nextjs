@@ -6,7 +6,7 @@ import ShoppingCart from "@/components/shoppingCart";
 export default function Index({ items }) {
   return (
     <Layout title="Store">
-      <div>
+      <div className="grid grid-cols-3 gap-[20px] mb-[30px]">
         {items &&
           items.map((item) => (
             <Product key={item.id} item={item} showAs="item" />

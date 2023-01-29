@@ -35,7 +35,7 @@ export default function FAQ() {
             a long time. Can you tell me where it is?
           </h3>
 
-          <h4 className="text-[2rem] mt-[20px] mb-[10px]">For customers in North America: </h4>
+          <h4 className="text-[2rem] mt-[20px] mb-[10px] font-medium">For customers in North America: </h4>
           <p className="text-[1.6rem] my-[10px]">
             We only see the same tracking information as you. Domestic packages
             should be received within two weeks of shipping confirmation. Please
@@ -43,7 +43,7 @@ export default function FAQ() {
             after two weeks.
           </p>
 
-          <h4 className="text-[2rem] mt-[20px] mb-[10px]">
+          <h4 className="text-[2rem] mt-[20px] mb-[10px] font-medium">
             For international customers outside of the Americas:{" "}
           </h4>
           <p className="text-[1.6rem] my-[10px]">
