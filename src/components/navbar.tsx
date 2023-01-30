@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useAppContext } from "@/components/stateWrapper";
-import Router from "next/router";
+import mbCart from "../.././public/img/mb-cart.svg";
 
 interface Link {
   label: string;
@@ -28,15 +28,15 @@ export default function Navbar() {
 
   function handleClickCart(e) {
     e.preventDefault();
-    cart.openCart();
+    cart.handleCart();
   }
   return (
-    <div className="mt-[30px] mb-[30px] mx-auto flex h-[80px] w-[90%] justify-center ">
-      <nav className="fixed z-[1] flex w-[90%] gap-[20px]">
-        <ul className="flex w-[100%] items-center justify-center gap-4 rounded-[20px] bg-white shadow-nav-shadow text-[1.8rem]">
+    <div className="mt-[30px] mb-[30px] mx-auto flex h-[80px] w-[90%] justify-center bg-white">
+      <nav className="fixed z-[1] flex w-[90%] gap-[20px] ">
+        <ul className="flex w-[100%] items-center justify-center gap-4 rounded-[20px] bg-white shadow-nav-shadow text-[1.8rem] font-medium">
           {links.map((link) => (
             <li
-              className="rounded-[10px] p-[10px] hover:bg-[#E24648]"
+              className="rounded-[10px] p-[10px] hover:bg-primary"
               key={link.route}
             >
               <Link className="p-[10px]" href={link.route}>
@@ -46,18 +46,18 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex w-[80px] items-center justify-center rounded-[20px] border-[2px] border-[#E24648] bg-white shadow-nav-shadow">
+        <div className="flex w-[80px] items-center justify-center rounded-[20px] border-[2px] border-primary bg-white shadow-nav-shadow">
           <Link href="#" onClick={handleClickCart}>
             <div className="flex h-[80px] w-[80px] items-center justify-center">
-              <div className="absolute right-[-5px] top-[-5px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-[#E24648]">
-                <span className="text-[1.4rem] text-white">
+              <div className="absolute right-[-5px] top-[-5px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-primary">
+                <span className="text-[1.4rem] text-white font-medium">
                   {cart.getNumberOfItems()}
                 </span>
               </div>
               <Image
                 height={40}
                 width={40}
-                src="https://www.mbhouse.ca/assets/img/icons/mb_cart_red.svg"
+                src={mbCart}
                 alt="shopping cart"
               />
             </div>

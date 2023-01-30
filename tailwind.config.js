@@ -10,6 +10,11 @@ module.exports = {
         banner:
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('http://localhost:3001/_next/static/media/banner.8481a878.webp')",
       },
+      colors: {
+        primary: "#ff576d",
+        secondary: "#4365ae",
+        tertiary: "#ffe3a2",
+      },
     },
   },
   plugins: [],

@@ -10,6 +10,7 @@ const AppContext = createContext({
   isOpen: true,
   items: [],
   openCart: () => {},
+  handleCart: () => {},
   addItemToCart: (item) => {},
   getNumberOfItems: () => {},
 });
@@ -58,6 +59,10 @@ export default function StateWrapper({
     setIsOpen(false);
   }
 
+  function handleCartChanged() {
+    setIsOpen(!isOpen);
+  }
+
   function handleAddItemToCart(item) {
     const temp = [...items];
     const found = temp.find((i) => i.id === item.id);
@@ -85,6 +90,7 @@ export default function StateWrapper({
         isOpen,
         openCart: handleOpenCart,
         closeCart: handleCloseCart,
+        handleCart: handleCartChanged,
         addItemToCart: handleAddItemToCart,
         getNumberOfItems: getNumberOfItems,
       }}

@@ -22,7 +22,7 @@ export default function Home({ items }: any) {
       </div>
 
       <h3 className="text-[2rem] font-medium mb-[10px]">Latest Products</h3>
-      <div className="grid grid-cols-3 gap-x-[20px] mb-[30px]">
+      <div className="grid grid-cols-3 gap-x-[40px] mb-[30px]">
         {items &&
           items.map((item: any) => (
             <Product key={item.id} item={item} showAs="item" />

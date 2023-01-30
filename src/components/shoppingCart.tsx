@@ -17,18 +17,24 @@ export default function ShoppingCart() {
 
   return (
     <div
-      style={{ display: cart.isOpen ? "block" : "none" }}
+      className="fixed top-0 left-0 z-[2] h-full w-[350px] flex-col items-end overflow-y-scroll bg-white p-[30px] shadow-nav-shadow"
+      style={{ display: cart.isOpen ? "flex" : "none" }}
     >
-      <button onClick={handleClickClose}>
+      <button
+        className="inline-flex items-center rounded-[8px] bg-tertiary px-[20px] py-[8px] text-center text-[1.6rem] font-semibold text-black"
+        onClick={handleClickClose}
+      >
         Close
       </button>
 
       {cart.items.length === 0 ? (
-        <div>Cart is empty</div>
+        <div className="flex h-full w-full items-center justify-center text-[1.6rem]">
+          Cart is empty
+        </div>
       ) : (
-        <>
-          <h3>Your items</h3>
-          <div>
+        <div className="flex w-full flex-col items-center">
+          <h3 className="my-[20px] text-[1.8rem] font-semibold">Your items</h3>
+          <div className="">
             {cart.items &&
               cart.items.length > 0 &&
               cart.items.map((item, i) => (
@@ -40,8 +46,8 @@ export default function ShoppingCart() {
                 />
               ))}
           </div>
-          <div>Total: ${getTotal()}</div>
-        </>
+          <div className="text-[3rem]">Total: ${getTotal()}</div>
+        </div>
       )}
     </div>
   );

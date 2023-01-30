@@ -19,11 +19,11 @@ export default function Product({ item, qty = 0, showAs }: any) {
             />
           </div>
 
-          <div className="w-[40%] flex flex-col justify-center gap-[20px]">
+          <div className="flex w-[40%] flex-col justify-center gap-[20px]">
             <div>
               <h2 className="text-[4rem]">{item.title}</h2>
             </div>
-            <div className="text-[28px] my-[10px]">${item.price}</div>
+            <div className="my-[10px] text-[28px]">${item.price}</div>
             <div>{item.description}</div>
             <div>
               <ButtonCart item={item} />
@@ -33,7 +33,7 @@ export default function Product({ item, qty = 0, showAs }: any) {
       );
     case "ListItem":
       return (
-        <div>
+        <div className="flex border-b-[1px] border-[#CCCCCC] py-[10px]">
           <div>
             <Image
               src={item.image}
@@ -43,18 +43,22 @@ export default function Product({ item, qty = 0, showAs }: any) {
             />
           </div>
           <div>
-            <div>{item.title}</div>
-            <div>${item.price}</div>
-            {qty === 0 ? "" : <div>{qty} units</div>}
+            <h3 className="text-[1.6rem] font-medium">{item.title}</h3>
+            <p className="text-[1.6rem]">${item.price}</p>
+            {qty === 0 ? "" : <p className="text-[1.6rem]">{qty} units</p>}
 
-            {qty === 0 ? "" : <div>Subtotal: ${qty * item.price}</div>}
+            {qty === 0 ? (
+              ""
+            ) : (
+              <p className="text-[1.6rem]">Subtotal: ${qty * item.price}</p>
+            )}
           </div>
         </div>
       );
     default:
       return (
-        <div className="bg-white w-[350px] rounded-[6px] shadow-nav-shadow">
-          <div className="flex justify-center">
+        <div className="w-[300px] bg-white">
+          <div className="mb-[10px] flex justify-center rounded-[6px] shadow-nav-shadow">
             <Link href={`/store/${convertToPath(item.title)}`}>
               <Image
                 className="h-[250px] w-[250px]"
@@ -65,13 +69,13 @@ export default function Product({ item, qty = 0, showAs }: any) {
               />
             </Link>
           </div>
-          <div className="flex flex-col items-center mx-[20px]">
-            <h3 className="text-[3rem]">
+          <div className="mx-[10px] flex flex-col items-center">
+            <p className="text-[1.6rem] font-medium">
               <Link href={`/store/${convertToPath(item.title)}`}>
                 {item.title}
               </Link>
-            </h3>
-            <p className="text-[1.6rem] my-[10px]">${item.price}</p>
+            </p>
+            <p className="my-[5px] text-[1.6rem]">${item.price}</p>
             <ButtonCart item={item} />
           </div>
         </div>
