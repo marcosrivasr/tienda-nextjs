@@ -3,10 +3,20 @@ import Product from "@/components/product";
 import { getItems } from "@/services/storeService";
 import ShoppingCart from "@/components/shoppingCart";
 
-export default function Index({ items }) {
+interface Props {
+  items: Array<{
+    id: number;
+    title: string;
+    price: number;
+    image: string;
+    description: string;
+  }>;
+}
+
+export default function Index({ items }: Props) {
   return (
     <Layout title="Store">
-      <div className="grid grid-cols-3 gap-[40px] mb-[30px]">
+      <div className="mb-[30px] grid grid-cols-3 gap-[40px]">
         {items &&
           items.map((item) => (
             <Product key={item.id} item={item} showAs="item" />

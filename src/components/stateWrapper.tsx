@@ -1,8 +1,6 @@
 import {
   createContext,
-  ReactElement,
   useContext,
-  useEffect,
   useState,
 } from "react";
 
@@ -48,8 +46,8 @@ export default function StateWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [items, setItems] = useState([]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [items, setItems] = useState<Array<never>>([]);
 
   function handleOpenCart() {
     setIsOpen(true);
