@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useAppContext } from "@/components/stateWrapper";
 import mbCart from "../.././public/img/mb-cart.svg";
+import React from "react";
 
 interface Link {
   label: string;
@@ -26,7 +27,7 @@ const links: Link[] = [
 export default function Navbar() {
   const cart = useAppContext();
 
-  function handleClickCart(e) {
+  function handleClickCart(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     e.preventDefault();
     cart.handleCart();
   }

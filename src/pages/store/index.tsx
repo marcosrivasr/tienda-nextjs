@@ -1,17 +1,7 @@
 import Layout from "@/components/layout";
 import Product from "@/components/product";
 import { getItems } from "@/services/storeService";
-import ShoppingCart from "@/components/shoppingCart";
-
-interface Props {
-  items: Array<{
-    id: number;
-    title: string;
-    price: number;
-    image: string;
-    description: string;
-  }>;
-}
+import { Props } from "@/types";
 
 export default function Index({ items }: Props) {
   return (

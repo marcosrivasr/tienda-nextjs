@@ -4,13 +4,24 @@ import {
   useState,
 } from "react";
 
-const AppContext = createContext({
+interface Context {
+  isOpen: boolean;
+  items: never[];
+  openCart: () => void;
+  closeCart: () => void;
+  handleCart: () => void;
+  addItemToCart: (item: any) => void
+  getNumberOfItems: () => number
+}
+
+const AppContext = createContext<Context>({
   isOpen: true,
   items: [],
   openCart: () => {},
+  closeCart: () => {},
   handleCart: () => {},
   addItemToCart: (item) => {},
-  getNumberOfItems: () => {},
+  getNumberOfItems: () => 0,
 });
 
 /*
