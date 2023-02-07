@@ -8,16 +8,6 @@ const instance = axios.create({
   headers: { "X-Custom-Header": "foobar" },
 });
 
-// export async function getItems() {
-//   try {
-//     const request = await instance.get("/products");
-//     const items = await request.data;
-//     return items;
-//   } catch (err) {
-//     console.error("Error capturado", err);
-//   }
-// }
-
 // React Query
 export const useGetItems = () => {
   return useQuery("items", async () => {
@@ -35,12 +25,6 @@ export const useGetItems = () => {
     retry: 2, // intenta hacer la solicitud 2 veces más si falla
   });
 };
-
-// export async function getLatestItems() {
-//   const items = await getItems();
-
-//   return items.slice(0, 3);
-// }
 
 // React Query
 export const useGetLatestItems = () => {
