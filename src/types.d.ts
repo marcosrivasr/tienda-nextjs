@@ -4,8 +4,13 @@ export interface Items {
   id: number;
   title: string;
   price: number;
-  image: string;
   description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
 
 export interface Props {
@@ -16,3 +21,4 @@ export interface Link {
   label: string;
   route: string;
 }
+

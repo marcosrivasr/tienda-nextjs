@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import Navbar from "@/components/navbar";
 import ShoppingCart from "@/components/shoppingCart";
 import { Poppins } from "@next/font/google";

@@ -19,12 +19,12 @@ export default function Product({ item, qty = 0, showAs }: any) {
             />
           </div>
 
-          <div className="flex w-[40%] flex-col justify-center gap-[20px]">
+          <div className="flex w-[40%] flex-col justify-center gap-[15px]">
             <div>
               <h2 className="text-[4rem]">{item.title}</h2>
             </div>
-            <div className="my-[10px] text-[28px]">${item.price}</div>
-            <div>{item.description}</div>
+            <p className="my-[10px] text-[2.8rem]">${item.price}</p>
+            <p className="text-[1.4rem]">{item.description}</p>
             <div>
               <ButtonCart item={item} />
             </div>
