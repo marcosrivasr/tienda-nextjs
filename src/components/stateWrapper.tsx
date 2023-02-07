@@ -22,34 +22,6 @@ const AppContext = createContext<Context>({
   getNumberOfItems: () => 0,
 });
 
-/*
-isOpen: false,
-  methods: {
-    add: (id) => {
-      const newState = { ...cart };
-      const found = newState.items.find((item) => item.id === id);
-      if (found) {
-        found.qty++;
-      } else {
-        newState.items.push({
-          id,
-          qty: 1,
-        });
-      }
-      setCart({ ...newState });
-    },
-    openCart: () => {
-      const newState = { ...cart };
-      newState.isOpen = true;
-      setCart({ ...newState });
-    },
-    closeCart: () => {
-      cart.isOpen = false;
-    },
-  },
-  items: [],
-*/
-
 export default function StateWrapper({
   children,
 }: {
@@ -80,7 +52,6 @@ export default function StateWrapper({
       temp.push(item);
     }
     setItems([...temp]);
-    // console.log({ items });
   }
 
   function handleRemoveItemToCart(item) {

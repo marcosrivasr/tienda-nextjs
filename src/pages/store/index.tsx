@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import Product from "@/components/product";
-import { getItems } from "@/services/storeService";
+import { useGetItems } from "@/services/storeService";
 import { Props } from "@/types";
 
 export default function Index({ items }: Props) {
@@ -17,7 +17,7 @@ export default function Index({ items }: Props) {
 }
 
 export async function getStaticProps() {
-  const res = await getItems();
+  const res = await useGetItems();
 
   return {
     props: {

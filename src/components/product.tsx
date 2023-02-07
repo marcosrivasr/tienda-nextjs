@@ -56,7 +56,7 @@ export default function Product({ item, qty = 0, showAs }: any) {
       );
     case "ListItem":
       return (
-        <div className="flex flex-col items-center">
+        <div className={`flex flex-col items-center`}>
           <div className="w-[150px] bg-white">
             <div className="mb-[10px] flex h-[150px] items-center justify-center rounded-[6px] shadow-nav-shadow">
               <Image

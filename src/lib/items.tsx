@@ -1,7 +1,20 @@
-import { getItems } from "@/services/storeService";
+import { useGetItems } from "@/services/storeService";
 
+// export async function getPathsFromTitle() {
+//   const items = await getItems();
+
+//   return items.map((item) => {
+//     return {
+//       params: {
+//         id: convertToPath(item.title),
+//       },
+//     };
+//   });
+// }
+
+// React Query
 export async function getPathsFromTitle() {
-  const items = await getItems();
+  const { data: items } = useGetItems();
 
   return items.map((item) => {
     return {
@@ -12,8 +25,18 @@ export async function getPathsFromTitle() {
   });
 }
 
+// export async function getItemData(id) {
+//   const items = await getItems();
+//   const product = items.find((item) => convertToPath(item.title) === id);
+//   return {
+//     id,
+//     data: product,
+//   };
+// }
+
+// React Query
 export async function getItemData(id) {
-  const items = await getItems();
+  const { data: items } = useGetItems();
   const product = items.find((item) => convertToPath(item.title) === id);
   return {
     id,
@@ -21,6 +44,17 @@ export async function getItemData(id) {
   };
 }
 
+// export function convertToPath(title) {
+//   return title.toLowerCase().replace(/\s/g, "-");
+// }
+
+// React Query
 export function convertToPath(title) {
   return title.toLowerCase().replace(/\s/g, "-");
 }
+
+
+
+
+
+

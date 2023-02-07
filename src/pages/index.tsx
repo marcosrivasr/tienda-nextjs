@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import Product from "@/components/product";
-import { getLatestItems } from "@/services/storeService";
+import { useGetLatestItems } from "@/services/storeService";
 import Carousel from "@/components/carousel";
 
 export default function Home({ items }: any) {
@@ -22,7 +22,7 @@ export default function Home({ items }: any) {
 }
 
 export async function getStaticProps() {
-  const res = await getLatestItems();
+  const res = await useGetLatestItems();
 
   return {
     props: {
