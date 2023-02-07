@@ -31,7 +31,7 @@ export default function Carousel() {
       onClick={() => setContador(index)}
       className={
         contador === index
-          ? `h-[20px] w-[20px] rounded-full border-2 border-transparent bg-primary transition-all duration-300 ease-in`
+          ? `h-[20px] w-[20px] rounded-full border-2 border-transparent bg-primary-1 transition-all duration-300 ease-in`
           : `h-[20px] w-[20px] rounded-full border-2 border-white bg-transparent transition-all duration-300 ease-in`
       }
     ></button>

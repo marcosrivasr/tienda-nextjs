@@ -1,8 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { createContext, useContext, useState } from "react";
 
 interface Context {
   isOpen: boolean;
@@ -10,8 +6,9 @@ interface Context {
   openCart: () => void;
   closeCart: () => void;
   handleCart: () => void;
-  addItemToCart: (item: any) => void
-  getNumberOfItems: () => number
+  addItemToCart: (item: any) => void;
+  removeItemToCart: (item: any) => void;
+  getNumberOfItems: () => number;
 }
 
 const AppContext = createContext<Context>({
@@ -21,6 +18,7 @@ const AppContext = createContext<Context>({
   closeCart: () => {},
   handleCart: () => {},
   addItemToCart: (item) => {},
+  removeItemToCart: (item) => {},
   getNumberOfItems: () => 0,
 });
 
@@ -82,7 +80,21 @@ export default function StateWrapper({
       temp.push(item);
     }
     setItems([...temp]);
-    console.log({ items });
+    // console.log({ items });
+  }
+
+  function handleRemoveItemToCart(item) {
+    const temp = [...items];
+    const found = temp.find((i) => i.id === item.id);
+    const indexDos = temp.indexOf(item);
+    if (found) {
+      if (found.qty <= 1) {
+        temp.splice(indexDos, 1);
+      } else {
+        found.qty--;
+      }
+    }
+    setItems([...temp]);
   }
 
   function getNumberOfItems() {
@@ -101,6 +113,7 @@ export default function StateWrapper({
         closeCart: handleCloseCart,
         handleCart: handleCartChanged,
         addItemToCart: handleAddItemToCart,
+        removeItemToCart: handleRemoveItemToCart,
         getNumberOfItems: getNumberOfItems,
       }}
     >

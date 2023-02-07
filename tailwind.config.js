@@ -15,9 +15,10 @@ module.exports = {
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('https://i.postimg.cc/SxkdJ3KZ/resumen-desenfoque-defocused-centro-comercial-centro-comercial-grandes-almacenes.jpg')",
       },
       colors: {
-        primary: "#ff576d",
-        secondary: "#4365ae",
-        tertiary: "#ffd339",
+        "primary-1": "#ff576d",
+        "primary-2": "#4365ae",
+        "secondary": "#ffd339",
+        "negative": "#cc0000",
       },
     },
   },

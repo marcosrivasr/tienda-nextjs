@@ -6,7 +6,7 @@ export default function ShoppingCart() {
 
   function getTotal() {
     const total = cart.items.reduce((acc, item) => {
-      return (acc += item.qty * item.price);
+      return (acc += item.qty * (item.price).toFixed(2));
     }, 0);
     return total;
   }
@@ -17,11 +17,11 @@ export default function ShoppingCart() {
 
   return (
     <div
-      className="fixed top-0 left-0 z-[2] h-full w-[350px] flex-col items-end overflow-y-scroll bg-white p-[30px] shadow-nav-shadow"
+      className="fixed top-0 left-0 z-[2] h-full w-[350px] flex-col items-end overflow-y-scroll bg-white py-[30px] px-[20px] shadow-nav-shadow"
       style={{ display: cart.isOpen ? "flex" : "none" }}
     >
       <button
-        className="inline-flex items-center rounded-[8px] bg-tertiary px-[20px] py-[8px] text-center text-[1.6rem] font-semibold text-black"
+        className="inline-flex items-center rounded-[8px] bg-secondary px-[20px] py-[8px] text-center text-[1.6rem] font-semibold text-black"
         onClick={handleClickClose}
       >
         Close
@@ -46,7 +46,7 @@ export default function ShoppingCart() {
                 />
               ))}
           </div>
-          <div className="text-[3rem]">Total: ${getTotal()}</div>
+          <div className="text-[2rem]">Total: ${(getTotal()).toFixed(2)}</div>
         </div>
       )}
     </div>

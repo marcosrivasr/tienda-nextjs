@@ -1,12 +1,12 @@
 import Layout from "@/components/layout";
 import Product from "@/components/product";
 import { getLatestItems } from "@/services/storeService";
-import Carousel from "@/components/carousel"
- 
+import Carousel from "@/components/carousel";
+
 export default function Home({ items }: any) {
   return (
     <Layout title="Home">
-      <div className="mb-[30px] flex h-full w-full items-end justify-center">
+      <div className="relative mb-[30px] flex h-full w-full items-end justify-center">
         <Carousel />
       </div>
 
