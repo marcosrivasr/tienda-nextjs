@@ -1,6 +1,8 @@
-import { useAppContext } from "@/components/stateWrapper";
-
-export default function ButtonAddCart({ item, handleClick }) {
+export default function ButtonAddCart({
+  handleClick,
+}: {
+  handleClick: () => void;
+}) {
   return (
     <div>
       <button

@@ -1,7 +1,11 @@
 import Image from "next/image";
 import remove from "../.././public/icon/delete-icon.svg";
 
-export default function ButtonRemoveCart({ item, handleClick }) {
+export default function ButtonRemoveCart({
+  handleClick,
+}: {
+  handleClick: () => void;
+}) {
   return (
     <div>
       <button

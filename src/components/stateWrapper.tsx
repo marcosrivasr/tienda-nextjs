@@ -1,14 +1,18 @@
 import { createContext, useContext, useState } from "react";
-import { Items } from "@/types";
+
+interface Item {
+  id: string;
+  qty: number;
+}
 
 interface Context {
   isOpen: boolean;
-  items: Items[];
+  items: Item[];
   openCart: () => void;
   closeCart: () => void;
   handleCart: () => void;
-  addItemToCart: (item: any) => void;
-  removeItemToCart: (item: any) => void;
+  addItemToCart: (item: Item) => void;
+  removeItemToCart: (item: Item) => void;
   getNumberOfItems: () => number;
 }
 
@@ -18,8 +22,8 @@ const AppContext = createContext<Context>({
   openCart: () => {},
   closeCart: () => {},
   handleCart: () => {},
-  addItemToCart: (item) => {},
-  removeItemToCart: (item) => {},
+  addItemToCart: () => {},
+  removeItemToCart: () => {},
   getNumberOfItems: () => 0,
 });
 
@@ -29,7 +33,7 @@ export default function StateWrapper({
   children: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [items, setItems] = useState<Array<never>>([]);
+  const [items, setItems] = useState<Array<Item>>([]);
 
   function handleOpenCart() {
     setIsOpen(true);
@@ -43,7 +47,7 @@ export default function StateWrapper({
     setIsOpen(!isOpen);
   }
 
-  function handleAddItemToCart(item) {
+  function handleAddItemToCart(item: Item) {
     const temp = [...items];
     const found = temp.find((i) => i.id === item.id);
     if (found) {
@@ -55,7 +59,7 @@ export default function StateWrapper({
     setItems([...temp]);
   }
 
-  function handleRemoveItemToCart(item) {
+  function handleRemoveItemToCart(item: Item) {
     const temp = [...items];
     const found = temp.find((i) => i.id === item.id);
     const indexDos = temp.indexOf(item);

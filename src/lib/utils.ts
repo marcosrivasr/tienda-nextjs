@@ -13,7 +13,7 @@ export async function getPathsFromTitle() {
   });
 }
 
-export async function getItemData(id) {
+export async function getItemData(id: string) {
   const items: Items[] = await getItems();
   const product = items.find((item) => convertToPath(item.title) === id);
   return {

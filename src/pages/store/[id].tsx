@@ -5,12 +5,22 @@ import { getItemData, getPathsFromTitle } from "@/lib/utils";
 import {Items} from "@/types"
 
 interface Props {
-  productInfo: Items[];
+  productInfo: Items;
 }
 
-export default function ProductPage({ productInfo }: Props) {
+interface Props {
+  productInfo: {
+    data: Item;
+  };
+}
+
+interface Params {
+  id: string[];
+}
+
+export default function ProductPage({ productInfo } : Props) {
   return (
-    <Layout title={productInfo.data.title}>
+    <Layout title={productInfo.data.title as string}>
       <Product item={productInfo.data} showAs="Page" />
       <ShoppingCart />
     </Layout>
@@ -26,9 +36,9 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const id: [] = params.id;
-  const productInfo = await getItemData(id);
+export async function getStaticProps({ params } : {params: Params}) {
+  const id = params.id;
+  const productInfo = await getItemData(id) as Items;
 
   return {
     props: {

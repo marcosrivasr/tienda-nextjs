@@ -18,9 +18,9 @@ export interface Links {
   route: string;
 }
 
-export interface ID {
-  id: number;
-}
+// export interface ID {
+//   id: number;
+// }
 
 export interface Props {
   items: Items[];

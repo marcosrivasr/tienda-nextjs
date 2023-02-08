@@ -4,29 +4,37 @@ import { convertToPath } from "@/lib/utils";
 import { useAppContext } from "@/components/stateWrapper";
 import ButtonAddCart from "@/components/buttonAddCart";
 import ButtonRemoveCart from "./buttonRemoveCart";
-import { Items } from "@/types";
 
-export default function Product({ item, qty = 0, showAs }: {item: any, qty: number, showAs: string}) {
+interface Item {
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+  id: string;
+  qty: number;
+}
+
+export default function Product({
+  item,
+  qty = 0,
+  showAs,
+}: {
+  item: Item;
+  qty: number;
+  showAs: string;
+}) {
   const cart = useAppContext();
 
   function addToCart() {
     cart.addItemToCart(item);
-
-    if (!cart.isOpen) {
-      cart.openCart();
-    }
   }
 
   function removeToCart() {
     cart.removeItemToCart(item);
-
-    if (!cart.isOpen) {
-      cart.openCart();
-    }
   }
 
   function getSubtotal() {
-    return qty * item.price.toFixed(2);
+    return qty * item.price;
   }
 
   switch (showAs) {
@@ -50,7 +58,7 @@ export default function Product({ item, qty = 0, showAs }: {item: any, qty: numb
             <p className="my-[10px] text-[2.5rem]">${item.price}</p>
             <p className="text-[1.4rem]">{item.description}</p>
             <div>
-              <ButtonAddCart item={item} handleClick={addToCart} />
+              <ButtonAddCart handleClick={addToCart} />
             </div>
           </div>
         </div>
@@ -68,7 +76,7 @@ export default function Product({ item, qty = 0, showAs }: {item: any, qty: numb
                 height={100}
               />
               <div className="absolute flex h-[150px] w-[150px] items-start justify-end">
-                <ButtonRemoveCart item={item} handleClick={removeToCart} />
+                <ButtonRemoveCart handleClick={removeToCart} />
               </div>
             </div>
 
@@ -123,7 +131,7 @@ export default function Product({ item, qty = 0, showAs }: {item: any, qty: numb
               </p>
             </div>
             <p className="my-[5px] text-[1.6rem]">${item.price.toFixed(2)}</p>
-            <ButtonAddCart item={item} handleClick={addToCart} />
+            <ButtonAddCart handleClick={addToCart} />
           </div>
         </div>
       );

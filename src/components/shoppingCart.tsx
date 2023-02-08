@@ -2,12 +2,27 @@ import Product from "@/components/product";
 import { useAppContext } from "@/components/stateWrapper";
 import styles from "../../styles/animation.module.css";
 
+interface Item {
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+  id: string;
+  qty: number;
+}
+
+interface Cart {
+  items: Item[];
+  isOpen: boolean;
+  closeCart: () => void;
+}
+
 export default function ShoppingCart() {
-  const cart  = useAppContext();
+  const cart: Cart  = useAppContext();
 
   function getTotal() {
     const total = cart.items.reduce((acc, item) => {
-      return (acc += item.qty * item.price.toFixed(2));
+      return (acc += item.qty * item.price);
     }, 0);
     return total;
   }
