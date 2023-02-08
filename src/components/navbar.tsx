@@ -3,13 +3,9 @@ import Image from "next/image";
 import { useAppContext } from "@/components/stateWrapper";
 import mbCart from "../.././public/img/mb-cart.svg";
 import React from "react";
+import { Links } from "@/types"
 
-interface Link {
-  label: string;
-  route: string;
-}
-
-const links: Link[] = [
+const links: Links[] = [
   {
     label: "Home",
     route: "/",

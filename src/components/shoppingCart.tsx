@@ -3,7 +3,7 @@ import { useAppContext } from "@/components/stateWrapper";
 import styles from "../../styles/animation.module.css";
 
 export default function ShoppingCart() {
-  const cart = useAppContext();
+  const cart  = useAppContext();
 
   function getTotal() {
     const total = cart.items.reduce((acc, item) => {

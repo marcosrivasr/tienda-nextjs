@@ -1,9 +1,13 @@
 import Layout from "@/components/layout";
 import Product from "@/components/product";
-import { getLatestItems } from "@/services/storeService";
 import Carousel from "@/components/carousel";
+import { useQuery } from "react-query";
+import { getLatestItems } from "@/services/storeService";
+import { Items } from "@/types";
 
-export default function Home({ items }: any) {
+export default function Home() {
+  const { data: items } = useQuery<Items[], Error>("products", getLatestItems);
+
   return (
     <Layout title="Home">
       <div className="relative mb-[30px] flex h-full w-full items-end justify-center">
@@ -19,14 +23,4 @@ export default function Home({ items }: any) {
       </div>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const res = await getLatestItems();
-
-  return {
-    props: {
-      items: res,
-    },
-  };
 }

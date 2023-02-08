@@ -13,12 +13,15 @@ export interface Items {
   };
 }
 
-export interface Props {
-  items: Array<Items>;
-}
-
-export interface Link {
+export interface Links {
   label: string;
   route: string;
 }
 
+export interface ID {
+  id: number;
+}
+
+export interface Props {
+  items: Items[];
+}

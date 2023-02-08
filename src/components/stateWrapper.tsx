@@ -1,8 +1,9 @@
 import { createContext, useContext, useState } from "react";
+import { Items } from "@/types";
 
 interface Context {
   isOpen: boolean;
-  items: never[];
+  items: any[];
   openCart: () => void;
   closeCart: () => void;
   handleCart: () => void;

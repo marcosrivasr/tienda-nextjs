@@ -1,12 +1,10 @@
 import StateWrapper from "@/components/stateWrapper";
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { ReactQueryDevtoolsPanel } from 'react-query/devtools'
 
 import "../../styles/globals.css";
 
@@ -18,6 +16,7 @@ function MyApp({ Component, pageProps }: any) {
       <StateWrapper>
         <Component {...pageProps} />
         <ReactQueryDevtools initialIsOpen={false}/>
+        {/* <ReactQueryDevtoolsPanel setIsOpen /> */}
       </StateWrapper>
     </QueryClientProvider>
   );

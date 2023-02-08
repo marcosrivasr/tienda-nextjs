@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { convertToPath } from "@/lib/items";
+import { convertToPath } from "@/lib/utils";
 import { useAppContext } from "@/components/stateWrapper";
 import ButtonAddCart from "@/components/buttonAddCart";
 import ButtonRemoveCart from "./buttonRemoveCart";

@@ -1,14 +1,15 @@
 import Layout from "@/components/layout";
 import Product from "@/components/product";
 import ShoppingCart from "@/components/shoppingCart";
-import { getItemData, getPathsFromTitle } from "@/lib/items";
+import { getItemData, getPathsFromTitle } from "@/lib/utils";
+// import { Props } from "@/types";
+import {Items} from "@/types"
 
-// export interface Props {
-//   productInfo: Array<Products>;
-//   params: Array<string>;
-// }
+interface Props {
+  productInfo: Items[];
+}
 
-export default function ProductPage({ productInfo }) {
+export default function ProductPage({ productInfo }: Props) {
   return (
     <Layout title={productInfo.data.title}>
       <Product item={productInfo.data} showAs="Page" />
@@ -27,7 +28,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const id = params.id;
+  const id: [] = params.id;
   const productInfo = await getItemData(id);
 
   return {
