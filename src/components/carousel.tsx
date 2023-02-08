@@ -72,7 +72,6 @@ export default function Carousel() {
             >
               <Image
                 src={images.icon[0].img}
-                className="h-[50px] w-[50px]"
                 alt="icon"
               />
             </button>
@@ -83,7 +82,6 @@ export default function Carousel() {
             >
               <Image
                 src={images.icon[1].img}
-                className="h-[50px] w-[50px]"
                 alt="icon"
               />
             </button>

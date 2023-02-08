@@ -1,8 +1,11 @@
 import { getItems } from "@/services/storeService";
 import { useQuery } from "react-query";
-
+import { Items } from ".././types"
+ 
 // export async function getPathsFromTitle() {
 //   const items = await getItems();
+
+//   console.log(items)
 
 //   return items.map((item) => {
 //     return {
@@ -15,7 +18,7 @@ import { useQuery } from "react-query";
 
 // React Query
 export async function getPathsFromTitle() {
-  const { data } = useQuery("products", getItems);
+  const { data } = useQuery<Items[], Error>('products', getItems);
 
   console.log(data.results);
 
@@ -39,9 +42,9 @@ export async function getPathsFromTitle() {
 
 // React Query
 export async function getItemData(id) {
-  // const { isLoading, isError, data, error } = useQuery("products", getItems);
-  const { data: items } = getItems();
-  const product = items.find((item) => convertToPath(item.title) === id);
+  const { isLoading, isError, data, error } = useQuery("title", getItems);
+  // const { data: items } = getItems();
+  const product = data.results.find((item) => convertToPath(item.title) === id);
   return {
     id,
     data: product,
