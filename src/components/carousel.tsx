@@ -49,7 +49,7 @@ export default function Carousel() {
       <div className="flex h-screen w-[95%] flex-row flex-nowrap justify-center">
         <div className="absolute h-screen w-[95%]">
           <div
-            className={`absolute h-screen w-full rounded-[2px] bg-cover ${carousel[contador]} transition-all duration-300 ease-in`}
+            className={`absolute h-screen w-full rounded-[2px] bg-cover ${carousel[contador]} transition-all duration-300 ease-in brightness-50`}
           ></div>
 
           <div className="absolute h-screen w-full">
@@ -70,20 +70,14 @@ export default function Carousel() {
               onClick={() => previousClick()}
               className="absolute left-0 flex h-10 w-10 items-center justify-center rounded-[4px] transition duration-300 ease-in-out lg:h-[40px] lg:w-[40px]"
             >
-              <Image
-                src={images.icon[0].img}
-                alt="icon"
-              />
+              <Image src={images.icon[0].img} alt={images.icon[0].alt} />
             </button>
 
             <button
               onClick={() => nextClick()}
               className="absolute right-0 flex h-10 w-10 items-center justify-center rounded-[4px] transition duration-300 ease-in-out lg:h-[40px] lg:w-[40px]"
             >
-              <Image
-                src={images.icon[1].img}
-                alt="icon"
-              />
+              <Image src={images.icon[1].img} alt={images.icon[1].alt} />
             </button>
           </div>
         </div>

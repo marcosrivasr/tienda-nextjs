@@ -3,7 +3,7 @@ import { Items } from "@/types";
 
 interface Context {
   isOpen: boolean;
-  items: any[];
+  items: Items[];
   openCart: () => void;
   closeCart: () => void;
   handleCart: () => void;

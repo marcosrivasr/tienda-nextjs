@@ -2,7 +2,6 @@ import Layout from "@/components/layout";
 import Product from "@/components/product";
 import ShoppingCart from "@/components/shoppingCart";
 import { getItemData, getPathsFromTitle } from "@/lib/utils";
-// import { Props } from "@/types";
 import {Items} from "@/types"
 
 interface Props {
