@@ -31,8 +31,8 @@ export default function Carousel() {
       onClick={() => setContador(index)}
       className={
         contador === index
-          ? `h-[20px] w-[20px] rounded-full border-2 border-transparent bg-primary-1 transition-all duration-300 ease-in`
-          : `h-[20px] w-[20px] rounded-full border-2 border-white bg-transparent transition-all duration-300 ease-in`
+          ? `h-[20px] w-[20px] rounded-full border-2 border-transparent bg-primary-1 transition-all duration-300 ease-out`
+          : `h-[20px] w-[20px] rounded-full border-2 border-white bg-transparent transition-all duration-300 ease-out`
       }
     ></button>
   ));
@@ -40,7 +40,7 @@ export default function Carousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextClick();
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [contador]);
 
@@ -49,7 +49,7 @@ export default function Carousel() {
       <div className="flex h-screen w-[95%] flex-row flex-nowrap justify-center">
         <div className="absolute h-screen w-[95%]">
           <div
-            className={`absolute h-screen w-full rounded-[2px] bg-cover ${carousel[contador]} transition-all duration-300 ease-in brightness-50`}
+            className={`absolute h-screen w-full rounded-[2px] bg-cover ${carousel[contador]} transition-all duration-300 ease-out brightness-50`}
           ></div>
 
           <div className="absolute h-screen w-full">
