@@ -1,7 +1,12 @@
+import axios from "axios";
 import Layout from "@/components/layout";
 import Product from "@/components/product";
-import { useGetItems } from "@/services/storeService";
+import { getItems } from "@/services/storeService";
 import { Props } from "@/types";
+
+const instance = axios.create({
+  baseURL: "https://fakestoreapi.com",
+});
 
 export default function Index({ items }: Props) {
   return (
@@ -17,7 +22,7 @@ export default function Index({ items }: Props) {
 }
 
 export async function getStaticProps() {
-  const res = await useGetItems();
+  const res = await getItems();
 
   return {
     props: {
@@ -25,3 +30,23 @@ export async function getStaticProps() {
     },
   };
 }
+
+// export async function getStaticProps() {
+//   const instance = axios.create({
+//     baseURL: "https://fakestoreapi.com",
+//     timeout: 0,
+//     headers: { "X-Custom-Header": "foobar" },
+//   });
+
+//   try {
+//     const request = await instance.get("/products");
+//     const items = await request.data;
+//     return {
+//       props: {
+//         items,
+//       },
+//     };
+//   } catch (err) {
+//     console.error("Error capturado", err);
+//   }
+// }

@@ -3,6 +3,11 @@ import Product from "@/components/product";
 import ShoppingCart from "@/components/shoppingCart";
 import { getItemData, getPathsFromTitle } from "@/lib/items";
 
+// export interface Props {
+//   productInfo: Array<Products>;
+//   params: Array<string>;
+// }
+
 export default function ProductPage({ productInfo }) {
   return (
     <Layout title={productInfo.data.title}>

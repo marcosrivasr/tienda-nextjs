@@ -1,10 +1,25 @@
-import { useGetItems } from "@/services/storeService";
+import { getItems } from "@/services/storeService";
+import { useQuery } from "react-query";
+
+// export async function getPathsFromTitle() {
+//   const items = await getItems();
+
+//   return items.map((item) => {
+//     return {
+//       params: {
+//         id: convertToPath(item.title),
+//       },
+//     };
+//   });
+// }
 
 // React Query
 export async function getPathsFromTitle() {
-  const { data: items } = useGetItems();
+  const { data } = useQuery("products", getItems);
 
-  return items.map((item) => {
+  console.log(data.results);
+
+  return data.results.map((item) => {
     return {
       params: {
         id: convertToPath(item.title),
@@ -13,9 +28,19 @@ export async function getPathsFromTitle() {
   });
 }
 
+// export async function getItemData(id) {
+//   const items = await getItems();
+//   const product = items.find((item) => convertToPath(item.title) === id);
+//   return {
+//     id,
+//     data: product,
+//   };
+// }
+
 // React Query
 export async function getItemData(id) {
-  const { data: items } = useGetItems();
+  // const { isLoading, isError, data, error } = useQuery("products", getItems);
+  const { data: items } = getItems();
   const product = items.find((item) => convertToPath(item.title) === id);
   return {
     id,
@@ -23,13 +48,7 @@ export async function getItemData(id) {
   };
 }
 
-// React Query
 export function convertToPath(title) {
   return title.toLowerCase().replace(/\s/g, "-");
 }
-
-
-
-
-
 

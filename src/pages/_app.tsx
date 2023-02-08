@@ -1,11 +1,25 @@
 import StateWrapper from "@/components/stateWrapper";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
 import "../../styles/globals.css";
 
-function MyApp({ Component, pageProps } : any) {
+const queryClient = new QueryClient();
+
+function MyApp({ Component, pageProps }: any) {
   return (
-    <StateWrapper>
-      <Component {...pageProps} />
-    </StateWrapper>
+    <QueryClientProvider client={queryClient}>
+      <StateWrapper>
+        <Component {...pageProps} />
+        <ReactQueryDevtools />
+      </StateWrapper>
+    </QueryClientProvider>
   );
 }
 
