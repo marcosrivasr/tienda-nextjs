@@ -16,9 +16,3 @@ export async function getItems() {
     console.error("Error capturado", err);
   }
 }
-
-export async function getLatestItems() {
-  const items = await getItems();
-
-  return items.slice(0, 3);
-}
