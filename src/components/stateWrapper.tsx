@@ -1,10 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { Context } from "@/types"
-
-interface Item {
-  id: string;
-  qty: number;
-}
+import { Context, Item } from "@/types"
 
 const AppContext = createContext<Context>({
   isOpen: true,

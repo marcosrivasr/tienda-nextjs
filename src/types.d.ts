@@ -11,6 +11,12 @@ export interface Items {
     rate: number;
     count: number;
   };
+  qty: number;
+
+}
+
+interface Item extends Items{
+  qty: number;
 }
 
 interface Context {
@@ -28,10 +34,6 @@ export interface Links {
   label: string;
   route: string;
 }
-
-// export interface ID {
-//   id: number;
-// }
 
 export interface Props {
   items: Items[];

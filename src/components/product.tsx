@@ -4,15 +4,7 @@ import { convertToPath } from "@/lib/utils";
 import { useAppContext } from "@/components/stateWrapper";
 import ButtonAddCart from "@/components/buttonAddCart";
 import ButtonRemoveCart from "./buttonRemoveCart";
-
-interface Item {
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-  id: string;
-  qty: number;
-}
+import { Item } from "@/types"
 
 export default function Product({
   item,
@@ -20,7 +12,7 @@ export default function Product({
   showAs,
 }: {
   item: Item;
-  qty: number;
+  qty?: number;
   showAs: string;
 }) {
   const cart = useAppContext();
