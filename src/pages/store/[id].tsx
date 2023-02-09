@@ -4,21 +4,7 @@ import ShoppingCart from "@/components/shoppingCart";
 import { getItemData, getPathsFromTitle } from "@/lib/utils";
 import {Items} from "@/types"
 
-interface Props {
-  productInfo: Items;
-}
-
-interface Props {
-  productInfo: {
-    data: Item;
-  };
-}
-
-interface Params {
-  id: string[];
-}
-
-export default function ProductPage({ productInfo } : Props) {
+export default function ProductPage({ productInfo }) {
   return (
     <Layout title={productInfo.data.title as string}>
       <Product item={productInfo.data} showAs="Page" />
@@ -38,7 +24,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params } : {params: Params}) {
   const id = params.id;
-  const productInfo = await getItemData(id) as Items;
+  const productInfo = await getItemData(id);
 
   return {
     props: {

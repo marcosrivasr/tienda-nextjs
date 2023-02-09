@@ -13,6 +13,17 @@ export interface Items {
   };
 }
 
+interface Context {
+  isOpen: boolean;
+  items: Item[];
+  openCart: () => void;
+  closeCart: () => void;
+  handleCart: () => void;
+  addItemToCart: (item: Item) => void;
+  removeItemToCart: (item: Item) => void;
+  getNumberOfItems: () => number;
+}
+
 export interface Links {
   label: string;
   route: string;

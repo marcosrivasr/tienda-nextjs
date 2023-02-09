@@ -1,24 +1,10 @@
 import Product from "@/components/product";
 import { useAppContext } from "@/components/stateWrapper";
 import styles from "../../styles/animation.module.css";
-
-interface Item {
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-  id: string;
-  qty: number;
-}
-
-interface Cart {
-  items: Item[];
-  isOpen: boolean;
-  closeCart: () => void;
-}
+import { Context } from "@/types"
 
 export default function ShoppingCart() {
-  const cart: Cart  = useAppContext();
+  const cart: Context  = useAppContext();
 
   function getTotal() {
     const total = cart.items.reduce((acc, item) => {

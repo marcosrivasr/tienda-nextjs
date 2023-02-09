@@ -1,19 +1,9 @@
 import { createContext, useContext, useState } from "react";
+import { Context } from "@/types"
 
 interface Item {
   id: string;
   qty: number;
-}
-
-interface Context {
-  isOpen: boolean;
-  items: Item[];
-  openCart: () => void;
-  closeCart: () => void;
-  handleCart: () => void;
-  addItemToCart: (item: Item) => void;
-  removeItemToCart: (item: Item) => void;
-  getNumberOfItems: () => number;
 }
 
 const AppContext = createContext<Context>({
