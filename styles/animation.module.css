@@ -1,0 +1,34 @@
+.slideInLeft {
+  animation-name: slideInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideOutLeft {
+  animation-name: slideOutLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  visibility: visible;
+  transition: visibility 1s;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
